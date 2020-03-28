@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
         marginTop: 60,
         width: "100%",
         // height: "90%",
-        borderColor: "white",
-        borderStyle: "dashed",
-        borderWidth: 1,
+        // borderColor: "white",
+        // borderStyle: "dashed",
+        // borderWidth: 1,
     }    
 });

@@ -1,12 +1,39 @@
-import React from 'react';
-import { StyleSheet, View, Text, FlatList, Button } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
+import { Container, Header, Button, Content, ActionSheet, Text } from "native-base";
+import symbolicateStackTrace from 'react-native/Libraries/Core/Devtools/symbolicateStackTrace';
+
 
 const Tab3 = () => {
 
+    const BUTTONS = ["Option 0", "Option 1", "Option 2", "Delete", "Cancel"];
+    const CANCEL_INDEX = 4;
+    const DESTRUCTIVE_INDEX = 3;
+
+    const[state, setState] = useState({});
+
     return (
-        <View style={styles.container}>
-            <Text>3</Text>
-        </View>
+        <Container>
+            <Header />
+            <Content padder>
+                <Button
+                    onPress={() =>
+                        ActionSheet.show(
+                        {
+                            options: BUTTONS,
+                            cancelButtonIndex: CANCEL_INDEX,
+                            destructiveButtonIndex: DESTRUCTIVE_INDEX,
+                            title: "ActionSheet"
+                        },
+                        buttonIndex => {
+                            // setState({clicked: BUTTONS[buttonIndex]})
+                        }
+                    )}
+                >
+                    <Text>Actionsheet</Text>
+                </Button>
+            </Content>
+        </Container>
     )
 }
 

@@ -1,12 +1,38 @@
 import React from 'react';
-import { StyleSheet, View, Text, FlatList, Button } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import Form from "../form/form";
 
 const Tab1 = () => {
 
     return (
-        <View style={styles.container}>
-            <Text>1</Text>
-        </View>
+        <Container>
+            <Header>
+                <Left>
+                    <Button transparent>
+                        <Icon name='menu' />
+                    </Button>
+                </Left>
+                <Body>
+                    <Title>Form</Title>
+                </Body>
+                <Right>
+                    <Button transparent>
+                        <Icon name='menu' />
+                    </Button>
+                </Right>
+            </Header>
+            <Content>
+                <Form/>
+            </Content>
+            <Footer>
+                <FooterTab>
+                    <Button full style={styles.fullButton}>
+                        <Text>Footer</Text>
+                    </Button>
+                </FooterTab>
+            </Footer>
+        </Container>
     )
 }
 
@@ -24,5 +50,8 @@ const styles = StyleSheet.create({
         // borderColor: "white",
         // borderStyle: "dashed",
         // borderWidth: 1,
-    }    
+    },
+    fullButton: {
+        backgroundColor: "#16A4D9"
+    }
 });

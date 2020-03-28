@@ -1,12 +1,30 @@
 import React from 'react';
-import { StyleSheet, View, Text, FlatList, Button } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Container, Header, Title, Content, Button, Left, Right, Body, Icon } from 'native-base';
+import Users from "../users/users";
 
 const Tab2 = () => {
 
     return (
-        <View style={styles.container}>
-            <Text>2</Text>
-        </View>
+        <Container>
+            <Header>
+                <Left>
+                    <Button transparent>
+                        <Icon name='menu' />
+                    </Button>
+                </Left>
+                <Body>
+                    <Title>Users</Title>
+                </Body>
+                <Right/>
+            </Header>
+            <Content>
+                <Users/>
+            </Content>
+        </Container>
+        // <View style={styles.container}>
+            
+        // </View>
     )
 }
 
@@ -14,7 +32,7 @@ export default Tab2;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#0A259F",
+        backgroundColor: "gray",
         height: "100%",
         // flex: 1,
         // position: "absolute",
